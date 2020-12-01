@@ -1,0 +1,80 @@
+//keperluan berisi fungsi yang siap digunakan
+
+//fungsi--------------------------------------------------------------------------------------
+@function color($type){
+    @return map-get($color, $type);
+}
+
+@function weight($type){
+    @return map-get($font-weight, $type);
+}
+
+@function breakpoints($size){
+    @return map-get($breakpoints, $size);
+}
+
+//mixin--------------------------------------------------------------------------------------
+@mixin mqMax($size){
+    @media screen and (max-width: breakpoints($size)){
+        @content;
+    }
+}
+
+@mixin mqMin($size){
+    @media screen and (min-width: breakpoints($size)){
+        @content;
+    }
+}
+
+@mixin mqBetween($minSize, $maxSize){
+    @media screen and (min-width: breakpoints($minSize)) and (max-width: breakpoints($maxSize)){
+        @content;
+    }
+}
+
+// Firefox Browser
+@mixin firefoxBrowser {
+    @-moz-document url-prefix() {
+        @content;
+    }
+}
+
+  // Ms Edge Browser
+@mixin msEdgeBrowser {
+    @supports (-ms-ime-align: auto) {
+        @content;
+    }
+}
+
+  // IEBrowser
+@mixin IEBrowser {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+        @content;
+    }
+}
+
+@mixin clearfix() {
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Safari Browser
+@mixin safariBrowser {
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (not (stroke-color: transparent)) {
+            @content;
+        }
+    }
+    @media not all and (min-resolution: 0.001dpcm) {
+        @supports (-webkit-appearance: none) and (stroke-color: transparent) {
+            @content;
+        }
+    }
+}
+

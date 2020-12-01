@@ -1,0 +1,30 @@
+//variable untuk menyimpan nilai yang siap digunakan
+
+
+
+$color: (
+    background : #E5E5E5,
+    primary: #FE4551,
+    darken-primary: #B31E28,
+    primary-text: #707070,
+    input-border: #C9C9C9
+);
+
+$font-weight: (
+    light: 400,
+    regular: 500,
+    bold: 600,
+    black: 700
+);
+
+$breakpoints : (
+    sangat-kecil: 0,
+    iphone5: 320px,
+    kecil: 576px,
+    sedang: 768px,
+    besar: 992px,
+    ekstra-besar: 1200px,
+    sangat-besar: 1400px
+);
+
+$font-default: 'Poppins';
