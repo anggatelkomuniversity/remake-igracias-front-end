@@ -14,19 +14,19 @@
 }
 
 //mixin--------------------------------------------------------------------------------------
-@mixin mqMax($size){
+@mixin layarMax($size){
     @media screen and (max-width: breakpoints($size)){
         @content;
     }
 }
 
-@mixin mqMin($size){
+@mixin layarMin($size){
     @media screen and (min-width: breakpoints($size)){
         @content;
     }
 }
 
-@mixin mqBetween($minSize, $maxSize){
+@mixin layarBetween($minSize, $maxSize){
     @media screen and (min-width: breakpoints($minSize)) and (max-width: breakpoints($maxSize)){
         @content;
     }

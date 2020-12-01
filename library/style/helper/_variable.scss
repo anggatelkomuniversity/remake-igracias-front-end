@@ -18,13 +18,13 @@ $font-weight: (
 );
 
 $breakpoints : (
-    sangat-kecil: 0,
-    iphone5: 320px,
-    kecil: 576px,
-    sedang: 768px,
-    besar: 992px,
-    ekstra-besar: 1200px,
-    sangat-besar: 1400px
+    xs: 0, //super kecil
+    iphone5: 320px, //ukuran iphone
+    s: 576px, //kecil
+    md: 768px, //menengah
+    lg: 992px, //besar
+    xl: 1200px, //sangat besar
+    xxl: 1400px // super besar
 );
 
 $font-default: 'Poppins';

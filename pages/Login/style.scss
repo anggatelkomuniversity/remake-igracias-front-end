@@ -1,17 +1,17 @@
 @import '../../library/style/helper/index';
 
-
-
 body{
     background-color: color(background) !important;
 }
 
+@include igraciasIcon;
+@include formField;
+
 .login-wrapper{
     width: 100%;
     min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display: grid;
+    place-items: center;
 
     .login-card{
         width: 638px;
@@ -21,11 +21,79 @@ body{
         display: flex;
         justify-content: space-between;
 
+        @include layarMax(md){
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            border-radius: 0px;
+        }
+
+
         &__form{
             padding: 20px 56px;
             display: flex;
-            flex-direction: row;
+            width: 100%;
+            flex-direction: column;
+            justify-content: space-between;
 
+            @include layarMax(s){
+                padding: 20px 25px;
+            }
+
+            .form-section{
+                width: 100%;
+                @include layarMax(s){
+                    display: grid;
+                    place-items: center;
+                }
+                .form-wrapper{
+                    > h1{
+                        color: color(primary-text);
+                        font-weight: weight(light) !important;
+                    }
+
+                    form > .optional-wrapper{
+                        display: flex;
+                        justify-content: space-between;
+                        font-size: 13px;
+
+                        .form-check{
+                            .form-check-input{
+                                box-shadow: none !important;
+                                &:checked[type="checkbox"]{
+                                    background-color: color(primary);
+                                    border: solid 1px color(primary);
+
+                                }
+                            }
+                        }
+
+                        > a{
+                            color: color(primary);
+                            text-decoration: none;
+
+
+                            &:hover{
+                                color: rgba($color: color(primary), $alpha: .8);
+                            }
+                        }
+                    }
+
+                    .button-action{
+                        display: flex;
+                        justify-content: space-between;
+                        
+
+                        .button-register{
+                            display: inline;
+                            @include layarMin(s){
+                                display: none !important;
+                            }
+                        }
+                    }
+                }
+            }
         }
 
         &__section-register{
@@ -40,12 +108,22 @@ body{
             text-transform: capitalize;
             color: white;
             font-weight: weight(bold);
-            font-size: 15px;
+            font-size: 12px;
             flex-direction: column;
             line-height: 1.2;
+            transition: all .3s ease-in-out;
+
+            @include layarMax(md){
+                border-radius: 40px 0px 0px 40px;
+                height: 100%;
+            }
+
+            @include layarMax(s){
+                display: none;
+            }
 
             a{
-                font-size: 36px;
+                font-size: 30px;
                 text-decoration: none;
                 color: white;
                 transition: all .4s ease-in-out;
